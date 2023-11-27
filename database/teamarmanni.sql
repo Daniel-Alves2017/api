@@ -1,11 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Tempo de geração: 24/06/2023 às 22:26
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -17,15 +9,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Banco de dados: `teamarmanni`
---
 
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `modalidade`
---
 
 CREATE TABLE `modality` (
   `id` int(11) UNIQUE NOT NULL AUTO_INCREMENT,
@@ -34,54 +18,52 @@ CREATE TABLE `modality` (
   `horario` time DEFAULT NULL
 );
 
---
--- Despejando dados para a tabela `modalidade`
---
+
 
 INSERT INTO `modality` (`id`, `nome`, `dia_semana`, `horario`) VALUES
-(1, 'kickboxing', 'Segunda', '06:00:00'),
-(2, 'kickboxing', 'Segunda', '07:00:00'),
-(3, 'kickboxing', 'Segunda', '08:00:00'),
+(1, 'Musculação', 'Segunda', '06:00:00'),
+(2, 'Musculação', 'Segunda', '07:00:00'),
+(3, 'Musculação', 'Segunda', '08:00:00'),
 (4, '', 'Segunda', '09:00:00'),
-(5, 'kickboxing', 'Segunda', '17:00:00'),
-(6, 'kickboxing', 'Segunda', '18:00:00'),
-(7, 'kickboxing', 'Segunda', '19:00:00'),
-(8, 'kickboxing', 'Segunda', '20:00:00'),
+(5, 'Musculação', 'Segunda', '17:00:00'),
+(6, 'Musculação', 'Segunda', '18:00:00'),
+(7, 'Musculação', 'Segunda', '19:00:00'),
+(8, 'Musculação', 'Segunda', '20:00:00'),
 (9, '', 'Terça', '06:00:00'),
 (10, '', 'Terça', '07:00:00'),
 (11, '', 'Terça', '08:00:00'),
 (12, '', 'Terça', '09:00:00'),
 (13, '', 'Terça', '17:00:00'),
 (14, '', 'Terça', '18:00:00'),
-(15, 'jiu-jítsu', 'Terça', '19:00:00'),
-(16, 'kickboxing', 'Terça', '20:00:00'),
-(17, 'kickboxing', 'Quarta', '06:00:00'),
-(18, 'kickboxing', 'Quarta', '07:00:00'),
+(15, 'aeróbica', 'Terça', '19:00:00'),
+(16, 'Musculação', 'Terça', '20:00:00'),
+(17, 'Musculação', 'Quarta', '06:00:00'),
+(18, 'Musculação', 'Quarta', '07:00:00'),
 (19, '', 'Quarta', '08:00:00'),
 (20, '', 'Quarta', '09:00:00'),
-(21, 'kickboxing', 'Quarta', '17:00:00'),
-(22, 'kickboxing', 'Quarta', '18:00:00'),
-(23, 'kickboxing', 'Quarta', '19:00:00'),
-(24, 'kickboxing', 'Quarta', '20:00:00'),
+(21, 'Musculação', 'Quarta', '17:00:00'),
+(22, 'Musculação', 'Quarta', '18:00:00'),
+(23, 'Musculação', 'Quarta', '19:00:00'),
+(24, 'Musculação', 'Quarta', '20:00:00'),
 (25, '', 'Quinta', '06:00:00'),
 (26, '', 'Quinta', '07:00:00'),
 (27, '', 'Quinta', '08:00:00'),
 (28, '', 'Quinta', '09:00:00'),
 (29, '', 'Quinta', '17:00:00'),
 (30, '', 'Quinta', '18:00:00'),
-(31, 'kickboxing', 'Quinta', '19:00:00'),
-(32, 'jiu-jítsu', 'Quinta', '20:00:00'),
-(33, 'kickboxing', 'Sexta', '06:00:00'),
-(34, 'kickboxing', 'Sexta', '07:00:00'),
+(31, 'Musculação', 'Quinta', '19:00:00'),
+(32, 'aeróbica', 'Quinta', '20:00:00'),
+(33, 'Musculação', 'Sexta', '06:00:00'),
+(34, 'Musculação', 'Sexta', '07:00:00'),
 (35, '', 'Sexta', '08:00:00'),
 (36, '', 'Sexta', '09:00:00'),
-(37, 'kickboxing', 'Sexta', '17:00:00'),
-(38, 'kickboxing', 'Sexta', '18:00:00'),
-(39, 'kickboxing', 'Sexta', '19:00:00'),
-(40, 'jiu-jítsu', 'Sexta', '20:00:00'),
+(37, 'Musculação', 'Sexta', '17:00:00'),
+(38, 'Musculação', 'Sexta', '18:00:00'),
+(39, 'Musculação', 'Sexta', '19:00:00'),
+(40, 'aeróbica', 'Sexta', '20:00:00'),
 (41, '', 'Sábado', '06:00:00'),
 (42, '', 'Sábado', '07:00:00'),
-(43, 'kickboxing', 'Sábado', '08:00:00'),
+(43, 'Musculação', 'Sábado', '08:00:00'),
 (44, '', 'Sábado', '09:00:00'),
 (45, '', 'Sábado', '17:00:00'),
 (46, '', 'Sábado', '18:00:00'),
@@ -98,7 +80,7 @@ CREATE TABLE `student` (
   `id` int(11) UNIQUE NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) DEFAULT NULL,
   `modalidade` varchar(255) NOT NULL,
-  `grau_faixa` varchar(255) NOT NULL,
+  `frequencia` varchar(255) NOT NULL,
   `situacao` varchar(255) NOT NULL,
   `dia_semana` varchar(255)  NOT NULL,
   `horario` varchar(255) NOT NULL
@@ -108,12 +90,12 @@ CREATE TABLE `student` (
 -- Despejando dados para a tabela `modalidadeusuario`
 --
 
-INSERT INTO `student` (`id`, `nome`, `modalidade`, `grau_faixa`, `situacao`,`dia_semana`,   `horario`) VALUES
-(1, "mateus", "kickboxing", 'branco', "regular", "segunda, terca, quinta, sexta", "09:00:00, 18:00:00"),
-(2, "pedro", "jiu-jítsu", 'branco', "irregular", "terca, quinta, sexta", "07:00:00, 08:00:00"),
-(3, "ingrid", "jiu-jítsu", 'rosa', "regular", "terca, quarta, sabado", "07:00:00, 08:00:00, 17:00:00, 18:00:00"),
-(4, "rafael", "kickboxing", 'branco', "irregular", "segunda, quinta", "07:00:00, 08:00:00"),
-(5, "brener", "kickboxing", 'branco', "regular", "segunda, sexta", "07:00:00, 08:00:00");
+INSERT INTO `student` (`id`, `nome`, `modalidade`, `frequencia`, `situacao`,`dia_semana`,   `horario`) VALUES
+(1, "Daniel", "Musculação", 'iniciante', "regular", "segunda, terca, quinta, sexta", "09:00:00, 18:00:00"),
+(2, "Lucas", "aeróbica", 'iniciante', "irregular", "terca, quinta, sexta", "07:00:00, 08:00:00"),
+(3, "Joyce", "aeróbica", 'rosa', "regular", "terca, quarta, sabado", "07:00:00, 08:00:00, 17:00:00, 18:00:00"),
+(4, "kamila", "Musculação", 'iniciante', "irregular", "segunda, quinta", "07:00:00, 08:00:00"),
+(5, "Pedro", "Musculação", 'iniciante', "regular", "segunda, sexta", "07:00:00, 08:00:00");
 
 -- --------------------------------------------------------
 
@@ -134,5 +116,5 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `nome`, `email`, `senha`) VALUES
 (1, "Daniel", "daniel@email.com.br", 123),
-(2, "Kamila", "otaKamilavio@email.com.br", 123),
+(2, "Kamila", "Kamila@email.com.br", 123),
 (3, "Admin", "admin@email.com.br", 000);
