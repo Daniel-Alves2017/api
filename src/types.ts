@@ -8,7 +8,7 @@ interface IStudent {
   id?: number;
   nome?: string;
   modalidade?: string;
-  grau_faixa?: string;
+  frequencia?: string;
   situacao?: string;
   dia_semana?: string;
   horario?: string;
