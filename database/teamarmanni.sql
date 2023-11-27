@@ -133,6 +133,6 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nome`, `email`, `senha`) VALUES
-(1, "Rafael", "rafael@email.com.br", 123),
-(2, "Otávio", "otavio@email.com.br", 321),
-(3, "Ingrid", "ingrid@email.com.br", 000);
+(1, "Daniel", "daniel@email.com.br", 123),
+(2, "Kamila", "otaKamilavio@email.com.br", 123),
+(3, "Admin", "admin@email.com.br", 000);
