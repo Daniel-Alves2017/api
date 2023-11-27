@@ -71,12 +71,12 @@ async function addUser(req?: any, res?: any) {
 }
 
 async function addStudents(req?: any, res?: any) {
-  const { nome, modalidade, grau_faixa, situacao, dia_semana, horario } =
+  const { nome, modalidade, frequencia, situacao, dia_semana, horario } =
     req.body;
   const newStudent: IStudent = {
     nome,
     modalidade,
-    grau_faixa,
+    frequencia,
     situacao,
     dia_semana,
     horario,
@@ -123,7 +123,7 @@ async function updateUsers(req?: any, res?: any) {
 
 async function updateStudents(req?: any, res?: any) {
   const { id } = req.params;
-  const { nome, modalidade, grau_faixa, situacao, dia_semana, horario } =
+  const { nome, modalidade, frequencia, situacao, dia_semana, horario } =
     req.body;
   const updateStudent: IStudent = {};
   if (nome) {
@@ -132,8 +132,8 @@ async function updateStudents(req?: any, res?: any) {
   if (modalidade) {
     updateStudent.modalidade = modalidade;
   }
-  if (grau_faixa) {
-    updateStudent.grau_faixa = grau_faixa;
+  if (frequencia) {
+    updateStudent.frequencia = frequencia;
   }
   if (situacao) {
     updateStudent.situacao = situacao;
